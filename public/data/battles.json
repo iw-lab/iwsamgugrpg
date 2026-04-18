@@ -1,0 +1,940 @@
+[
+  {
+    "id": "ch1_01_yellow_turban",
+    "chapter": 1,
+    "title": "탁군의 거사",
+    "subtitle": "황건적 토벌",
+    "location": "유주 탁군",
+    "year": "184년 (중평 원년)",
+    "turnLimit": 20,
+    "objective": { "victory": "defeat-all" },
+    "defeat": ["liubei-falls", "turn-limit"],
+    "map": {
+      "width": 14,
+      "height": 10,
+      "terrain": [
+        "..............",
+        "..FF........PP",
+        ".FFFF.......PP",
+        "..F.F..pppp...",
+        "......pppppp..",
+        "......pppppp..",
+        "...MM..pppp...",
+        "..MMMM........",
+        "...MM.FFF.....",
+        ".........FF..."
+      ]
+    },
+    "playerDeploy": [
+      { "x": 1, "y": 5 }, { "x": 2, "y": 5 }, { "x": 1, "y": 6 }, { "x": 2, "y": 6 }
+    ],
+    "playerForced": [
+      { "generalId": "liubei", "x": 1, "y": 5 },
+      { "generalId": "guanyu", "x": 2, "y": 5 },
+      { "generalId": "zhangfei", "x": 1, "y": 6 }
+    ],
+    "enemyUnits": [
+      { "generalId": "zhangjiao", "x": 12, "y": 2, "level": 3, "ai": "lord" },
+      { "generalId": "zhangbao_yt", "x": 10, "y": 3, "level": 2, "ai": "aggressive" },
+      { "generalId": "zhangliang_yt", "x": 10, "y": 6, "level": 2, "ai": "aggressive" },
+      { "generalId": "yellow_warrior", "x": 9, "y": 4, "level": 1, "ai": "aggressive" },
+      { "generalId": "yellow_warrior", "x": 9, "y": 5, "level": 1, "ai": "aggressive" },
+      { "generalId": "yellow_warrior", "x": 11, "y": 5, "level": 1, "ai": "aggressive" }
+    ],
+    "events": [
+      { "id": "e_start", "trigger": { "type": "turn-start", "turn": 1 }, "action": { "type": "dialogue", "id": "ch1_01_start" } },
+      { "id": "e_end", "trigger": { "type": "battle-end", "victory": true }, "action": { "type": "dialogue", "id": "ch1_01_end" } }
+    ],
+    "reward": { "exp": 100, "gold": 200, "items": ["sword_iron", "potion_small"] },
+    "preDialogue": "prologue_peach_garden",
+    "postDialogue": "ch1_01_end",
+    "nextBattleId": "ch1_02_tiger_pass"
+  },
+  {
+    "id": "ch1_02_tiger_pass",
+    "chapter": 1,
+    "title": "사수관 전투",
+    "subtitle": "관우, 화웅을 베다",
+    "location": "낙양 사수관",
+    "year": "190년 (초평 원년)",
+    "turnLimit": 25,
+    "objective": { "victory": "defeat-boss", "targetId": "huaxiong" },
+    "defeat": ["liubei-falls", "turn-limit"],
+    "map": {
+      "width": 16,
+      "height": 10,
+      "terrain": [
+        "................",
+        "..MMMM....MMMM..",
+        ".MMMMMM..MMMMMM.",
+        ".MMM.........MMM",
+        "..............ww",
+        ".pp...BBBB....ww",
+        ".pppppppppp...ww",
+        ".pppppppppp.....",
+        ".pp...BBBB......",
+        "................"
+      ]
+    },
+    "playerDeploy": [
+      { "x": 1, "y": 5 }, { "x": 1, "y": 6 }, { "x": 1, "y": 7 }, { "x": 2, "y": 5 }, { "x": 2, "y": 6 }
+    ],
+    "playerForced": [{ "generalId": "liubei", "x": 1, "y": 6 }, { "generalId": "guanyu", "x": 2, "y": 6 }, { "generalId": "zhangfei", "x": 2, "y": 7 }],
+    "enemyUnits": [
+      { "generalId": "huaxiong", "x": 14, "y": 6, "level": 5, "ai": "lord", "items": ["horse_red_hare"] },
+      { "generalId": "han_warrior", "x": 12, "y": 5, "level": 3, "ai": "aggressive" },
+      { "generalId": "han_warrior", "x": 12, "y": 7, "level": 3, "ai": "aggressive" },
+      { "generalId": "han_warrior", "x": 10, "y": 4, "level": 2, "ai": "aggressive" },
+      { "generalId": "han_warrior", "x": 10, "y": 8, "level": 2, "ai": "aggressive" }
+    ],
+    "events": [
+      { "id": "e_duel", "trigger": { "type": "hp-below", "generalId": "huaxiong", "percent": 0.5 }, "action": { "type": "duel", "attacker": "guanyu", "defender": "huaxiong" } }
+    ],
+    "reward": { "exp": 140, "gold": 300, "items": ["sword_han", "armor_leather"] },
+    "nextBattleId": "ch1_03_si_shui"
+  },
+  {
+    "id": "ch1_03_si_shui",
+    "chapter": 1,
+    "title": "호뢰관 삼영전",
+    "subtitle": "장비·관우·유비 vs 여포",
+    "location": "낙양 호뢰관",
+    "year": "191년",
+    "turnLimit": 30,
+    "objective": { "victory": "defeat-boss", "targetId": "lubu" },
+    "defeat": ["liubei-falls"],
+    "map": {
+      "width": 18,
+      "height": 12,
+      "terrain": [
+        "..................",
+        "..MMM........MMM..",
+        ".MMMMM......MMMMM.",
+        ".MMM..........MMM.",
+        "....p.p.p.p.p.....",
+        ".p..p.p.p.p.p..p..",
+        ".pp.p.pppppp.p.pp.",
+        ".pp.p.pppppp.p.pp.",
+        ".p..p.p.p.p.p..p..",
+        "....p.p.p.p.p.....",
+        ".MMM..........MMM.",
+        "..MMMMMM..MMMMMM.."
+      ]
+    },
+    "playerDeploy": [
+      { "x": 1, "y": 5 }, { "x": 1, "y": 6 }, { "x": 1, "y": 7 }, { "x": 2, "y": 5 }, { "x": 2, "y": 7 }
+    ],
+    "playerForced": [{ "generalId": "liubei", "x": 1, "y": 6 }, { "generalId": "guanyu", "x": 2, "y": 6 }, { "generalId": "zhangfei", "x": 2, "y": 7 }],
+    "enemyUnits": [
+      { "generalId": "lubu", "x": 16, "y": 6, "level": 8, "ai": "lord", "items": ["halberd_heaven", "horse_red_hare"] },
+      { "generalId": "dongzhuo", "x": 12, "y": 5, "level": 6, "ai": "guard" },
+      { "generalId": "han_warrior", "x": 12, "y": 7, "level": 5, "ai": "aggressive" },
+      { "generalId": "han_warrior", "x": 14, "y": 4, "level": 4, "ai": "aggressive" },
+      { "generalId": "han_warrior", "x": 14, "y": 8, "level": 4, "ai": "aggressive" }
+    ],
+    "events": [
+      { "id": "e_trio", "trigger": { "type": "hp-below", "generalId": "lubu", "percent": 0.7 }, "action": { "type": "dialogue", "id": "ch1_03_trio" } }
+    ],
+    "reward": { "exp": 180, "gold": 500, "items": ["horse_dilu", "ring_tiger"] },
+    "nextBattleId": "ch1_04_xuzhou_relief"
+  },
+  {
+    "id": "ch1_04_xuzhou_relief",
+    "chapter": 1,
+    "title": "서주 구원",
+    "subtitle": "도겸을 돕기 위해",
+    "location": "서주",
+    "year": "193년",
+    "turnLimit": 22,
+    "objective": { "victory": "seize", "seizePos": { "x": 13, "y": 5 } },
+    "defeat": ["liubei-falls", "turn-limit"],
+    "map": {
+      "width": 15,
+      "height": 10,
+      "terrain": [
+        "...............",
+        "...FF.........G",
+        ".FFFFF.......BB",
+        ".FFFF........BB",
+        "............BBB",
+        "............BBB",
+        "............BB.",
+        ".FFFF........BB",
+        "..FFFFF.......G",
+        "..FFFF........."
+      ]
+    },
+    "playerDeploy": [
+      { "x": 1, "y": 4 }, { "x": 1, "y": 5 }, { "x": 1, "y": 6 }, { "x": 2, "y": 4 }, { "x": 2, "y": 6 }
+    ],
+    "playerForced": [{ "generalId": "liubei", "x": 1, "y": 5 }, { "generalId": "guanyu", "x": 2, "y": 4 }, { "generalId": "zhangfei", "x": 2, "y": 6 }],
+    "enemyUnits": [
+      { "generalId": "xiahoudun", "x": 13, "y": 5, "level": 6, "ai": "lord" },
+      { "generalId": "xiahouyuan", "x": 11, "y": 4, "level": 5, "ai": "aggressive" },
+      { "generalId": "dianwei", "x": 12, "y": 6, "level": 5, "ai": "guard" },
+      { "generalId": "wei_warrior", "x": 8, "y": 3, "level": 3, "ai": "aggressive" },
+      { "generalId": "wei_warrior", "x": 8, "y": 7, "level": 3, "ai": "aggressive" }
+    ],
+    "events": [
+      { "id": "e_recruit", "trigger": { "type": "battle-end", "victory": true }, "action": { "type": "recruit", "generalId": "jianyong" } }
+    ],
+    "reward": { "exp": 160, "gold": 400, "items": ["armor_chain"] },
+    "nextBattleId": "ch1_05_xiaopei"
+  },
+  {
+    "id": "ch1_05_xiaopei",
+    "chapter": 1,
+    "title": "소패 공방전",
+    "subtitle": "여포와의 악연",
+    "location": "서주 소패",
+    "year": "196년",
+    "turnLimit": 25,
+    "objective": { "victory": "survive", "survivalTurns": 15 },
+    "defeat": ["liubei-falls"],
+    "map": {
+      "width": 16,
+      "height": 11,
+      "terrain": [
+        "................",
+        "..WWWWWWWWWWWW..",
+        "..W..........W..",
+        "..W..pppppp..W..",
+        "..W..pppppp..W..",
+        "..G..pppppp..G..",
+        "..W..pppppp..W..",
+        "..W..........W..",
+        "..WWWWWWWWWWWW..",
+        "................",
+        "................"
+      ]
+    },
+    "playerDeploy": [
+      { "x": 5, "y": 3 }, { "x": 6, "y": 3 }, { "x": 7, "y": 3 }, { "x": 8, "y": 3 }, { "x": 9, "y": 3 },
+      { "x": 5, "y": 6 }, { "x": 9, "y": 6 }, { "x": 5, "y": 4 }, { "x": 9, "y": 4 }
+    ],
+    "playerForced": [
+      { "generalId": "liubei", "x": 7, "y": 4 },
+      { "generalId": "guanyu", "x": 6, "y": 4 },
+      { "generalId": "zhangfei", "x": 8, "y": 4 },
+      { "generalId": "jianyong", "x": 7, "y": 5 }
+    ],
+    "enemyUnits": [
+      { "generalId": "lubu", "x": 2, "y": 5, "level": 12, "ai": "lord", "items": ["halberd_heaven", "horse_red_hare"] },
+      { "generalId": "han_warrior", "x": 2, "y": 3, "level": 6, "ai": "aggressive" },
+      { "generalId": "han_warrior", "x": 2, "y": 7, "level": 6, "ai": "aggressive" },
+      { "generalId": "han_warrior", "x": 13, "y": 5, "level": 6, "ai": "aggressive" },
+      { "generalId": "han_warrior", "x": 13, "y": 3, "level": 5, "ai": "aggressive" },
+      { "generalId": "han_warrior", "x": 13, "y": 7, "level": 5, "ai": "aggressive" }
+    ],
+    "events": [],
+    "reward": { "exp": 200, "gold": 500, "items": ["talisman_peach", "potion_large"] },
+    "nextBattleId": "ch2_01_runan"
+  },
+  {
+    "id": "ch2_01_runan",
+    "chapter": 2,
+    "title": "여남에서의 재기",
+    "subtitle": "유랑의 시작",
+    "location": "예주 여남",
+    "year": "200년 (건안 5년)",
+    "turnLimit": 25,
+    "objective": { "victory": "defeat-all" },
+    "defeat": ["liubei-falls", "turn-limit"],
+    "map": {
+      "width": 15,
+      "height": 11,
+      "terrain": [
+        "...............",
+        "..FFF......FFF.",
+        ".FFFFF....FFFFF",
+        "..F..........F.",
+        "...ppppppp.....",
+        "...ppppppp.....",
+        "...ppppppp.....",
+        "..F..........F.",
+        ".FFFFF....FFFFF",
+        "..FFF......FFF.",
+        "..............."
+      ]
+    },
+    "playerDeploy": [
+      { "x": 1, "y": 4 }, { "x": 1, "y": 5 }, { "x": 1, "y": 6 }, { "x": 2, "y": 5 }
+    ],
+    "playerForced": [{ "generalId": "liubei", "x": 1, "y": 5 }, { "generalId": "guanyu", "x": 1, "y": 4 }, { "generalId": "zhangfei", "x": 1, "y": 6 }],
+    "enemyUnits": [
+      { "generalId": "xiahoudun", "x": 13, "y": 5, "level": 8, "ai": "lord" },
+      { "generalId": "xuhuang", "x": 11, "y": 4, "level": 7, "ai": "aggressive" },
+      { "generalId": "xuhuang", "x": 11, "y": 6, "level": 7, "ai": "aggressive" },
+      { "generalId": "zhanghe", "x": 9, "y": 3, "level": 6, "ai": "aggressive" }
+    ],
+    "events": [
+      { "id": "e_recruit_zhao", "trigger": { "type": "battle-end", "victory": true }, "action": { "type": "recruit", "generalId": "zhaoyun" } }
+    ],
+    "reward": { "exp": 200, "gold": 400, "items": ["horse_shadow"] },
+    "nextBattleId": "ch2_02_bowang"
+  },
+  {
+    "id": "ch2_02_bowang",
+    "chapter": 2,
+    "title": "박망파 화공",
+    "subtitle": "제갈량의 첫 출진",
+    "location": "형주 박망",
+    "year": "202년",
+    "turnLimit": 18,
+    "objective": { "victory": "defeat-boss", "targetId": "xiahoudun" },
+    "defeat": ["liubei-falls"],
+    "map": {
+      "width": 15,
+      "height": 11,
+      "terrain": [
+        "...FFFFFFFF....",
+        "..FFFFFFFFFF...",
+        "..FFF......F...",
+        "..FF..pppp.FF..",
+        "..F..pppppp.F..",
+        "..F..pppppp.F..",
+        "..F..pppppp.F..",
+        "..FF..pppp.FF..",
+        "..FFF......F...",
+        "..FFFFFFFFFF...",
+        "...FFFFFFFF...."
+      ]
+    },
+    "playerDeploy": [
+      { "x": 3, "y": 4 }, { "x": 3, "y": 5 }, { "x": 3, "y": 6 }, { "x": 4, "y": 5 }
+    ],
+    "playerForced": [
+      { "generalId": "liubei", "x": 3, "y": 5 },
+      { "generalId": "guanyu", "x": 3, "y": 4 },
+      { "generalId": "zhangfei", "x": 3, "y": 6 },
+      { "generalId": "zhaoyun", "x": 4, "y": 5 },
+      { "generalId": "zhugeliang", "x": 3, "y": 3 }
+    ],
+    "enemyUnits": [
+      { "generalId": "xiahoudun", "x": 12, "y": 5, "level": 10, "ai": "lord" },
+      { "generalId": "zhanghe", "x": 10, "y": 4, "level": 8, "ai": "aggressive" },
+      { "generalId": "zhanghe", "x": 10, "y": 6, "level": 8, "ai": "aggressive" },
+      { "generalId": "xuhuang", "x": 11, "y": 3, "level": 7, "ai": "aggressive" },
+      { "generalId": "xuhuang", "x": 11, "y": 7, "level": 7, "ai": "aggressive" }
+    ],
+    "events": [
+      { "id": "e_fire", "trigger": { "type": "turn-start", "turn": 5 }, "action": { "type": "dialogue", "id": "ch2_02_fire" } }
+    ],
+    "reward": { "exp": 240, "gold": 500, "items": ["scroll_fire", "fan_crane"] },
+    "nextBattleId": "ch2_03_xinye"
+  },
+  {
+    "id": "ch2_03_xinye",
+    "chapter": 2,
+    "title": "신야의 방화",
+    "subtitle": "제갈량의 두 번째 계략",
+    "location": "형주 신야",
+    "year": "208년",
+    "turnLimit": 22,
+    "objective": { "victory": "defeat-all" },
+    "defeat": ["liubei-falls", "turn-limit"],
+    "map": {
+      "width": 16,
+      "height": 11,
+      "terrain": [
+        "................",
+        "..MM........MM..",
+        ".MMMM......MMMM.",
+        "..MM..BBBB..MM..",
+        "......BBBB......",
+        ".p....BBBB....p.",
+        ".pp...BBBB...pp.",
+        ".pp..........pp.",
+        "..MM........MM..",
+        ".MMMM......MMMM.",
+        "..MM........MM.."
+      ]
+    },
+    "playerDeploy": [
+      { "x": 1, "y": 5 }, { "x": 1, "y": 6 }, { "x": 2, "y": 5 }, { "x": 2, "y": 6 }, { "x": 2, "y": 7 }
+    ],
+    "playerForced": [
+      { "generalId": "liubei", "x": 2, "y": 5 },
+      { "generalId": "guanyu", "x": 1, "y": 5 },
+      { "generalId": "zhangfei", "x": 2, "y": 6 },
+      { "generalId": "zhaoyun", "x": 1, "y": 6 },
+      { "generalId": "zhugeliang", "x": 2, "y": 7 }
+    ],
+    "enemyUnits": [
+      { "generalId": "caocao", "x": 14, "y": 5, "level": 12, "ai": "lord" },
+      { "generalId": "xiahoudun", "x": 12, "y": 4, "level": 10, "ai": "aggressive" },
+      { "generalId": "xiahouyuan", "x": 12, "y": 6, "level": 10, "ai": "aggressive" },
+      { "generalId": "xuchu", "x": 14, "y": 4, "level": 11, "ai": "guard" },
+      { "generalId": "dianwei", "x": 14, "y": 6, "level": 11, "ai": "guard" },
+      { "generalId": "zhanghe", "x": 10, "y": 3, "level": 9, "ai": "aggressive" },
+      { "generalId": "xuhuang", "x": 10, "y": 7, "level": 9, "ai": "aggressive" }
+    ],
+    "events": [],
+    "reward": { "exp": 260, "gold": 600, "items": ["scroll_heal", "book_strategy"] },
+    "nextBattleId": "ch2_04_changban"
+  },
+  {
+    "id": "ch2_04_changban",
+    "chapter": 2,
+    "title": "장판파의 고함",
+    "subtitle": "조운의 단기필마, 장비의 일갈",
+    "location": "형주 당양 장판",
+    "year": "208년",
+    "turnLimit": 20,
+    "objective": { "victory": "escort", "targetId": "liubei" },
+    "defeat": ["liubei-falls", "turn-limit"],
+    "map": {
+      "width": 18,
+      "height": 11,
+      "terrain": [
+        "..................",
+        "..MMM........MMM..",
+        ".MMMMM......MMMMM.",
+        "..MM..........MM..",
+        "....pppppppppp....",
+        ".BB.pppppppppp.BB.",
+        ".BB.pppppppppp.BB.",
+        "....pppppppppp....",
+        "..MM..........MM..",
+        ".MMMMM......MMMMM.",
+        "..MMM........MMM.."
+      ]
+    },
+    "playerDeploy": [
+      { "x": 1, "y": 5 }, { "x": 1, "y": 6 }, { "x": 2, "y": 5 }, { "x": 2, "y": 6 }
+    ],
+    "playerForced": [
+      { "generalId": "liubei", "x": 1, "y": 6 },
+      { "generalId": "guanyu", "x": 1, "y": 5 },
+      { "generalId": "zhangfei", "x": 2, "y": 6 },
+      { "generalId": "zhaoyun", "x": 2, "y": 5 },
+      { "generalId": "zhugeliang", "x": 1, "y": 7 }
+    ],
+    "enemyUnits": [
+      { "generalId": "caocao", "x": 16, "y": 5, "level": 13, "ai": "lord" },
+      { "generalId": "xiahoudun", "x": 14, "y": 4, "level": 12, "ai": "aggressive" },
+      { "generalId": "xiahouyuan", "x": 14, "y": 6, "level": 12, "ai": "aggressive" },
+      { "generalId": "xuchu", "x": 15, "y": 5, "level": 12, "ai": "aggressive" },
+      { "generalId": "zhanghe", "x": 11, "y": 3, "level": 11, "ai": "aggressive" },
+      { "generalId": "xuhuang", "x": 11, "y": 7, "level": 11, "ai": "aggressive" }
+    ],
+    "events": [],
+    "reward": { "exp": 280, "gold": 500, "items": ["spear_serpent"] },
+    "nextBattleId": "ch2_05_summit"
+  },
+  {
+    "id": "ch2_05_summit",
+    "chapter": 2,
+    "title": "손권과의 회담",
+    "subtitle": "오와의 동맹",
+    "location": "하구",
+    "year": "208년",
+    "turnLimit": 20,
+    "objective": { "victory": "defeat-all" },
+    "defeat": ["liubei-falls"],
+    "map": {
+      "width": 15,
+      "height": 10,
+      "terrain": [
+        "...............",
+        "...pp......pp..",
+        "..pppp....pppp.",
+        ".ppwwwwwwwwwpp.",
+        ".wwwwwwwwwwwww.",
+        ".wwwwwwwwwwwww.",
+        ".ppwwwwwwwwwpp.",
+        "..pppp....pppp.",
+        "...pp......pp..",
+        "..............."
+      ]
+    },
+    "playerDeploy": [
+      { "x": 1, "y": 2 }, { "x": 2, "y": 2 }, { "x": 1, "y": 7 }, { "x": 2, "y": 7 }, { "x": 3, "y": 2 }, { "x": 3, "y": 7 }
+    ],
+    "playerForced": [
+      { "generalId": "liubei", "x": 2, "y": 2 },
+      { "generalId": "guanyu", "x": 1, "y": 2 },
+      { "generalId": "zhangfei", "x": 3, "y": 2 },
+      { "generalId": "zhaoyun", "x": 2, "y": 7 },
+      { "generalId": "zhugeliang", "x": 1, "y": 7 }
+    ],
+    "enemyUnits": [
+      { "generalId": "caocao", "x": 13, "y": 4, "level": 15, "ai": "lord" },
+      { "generalId": "xuchu", "x": 12, "y": 3, "level": 13, "ai": "guard" },
+      { "generalId": "dianwei", "x": 12, "y": 5, "level": 13, "ai": "guard" },
+      { "generalId": "zhangliao", "x": 11, "y": 2, "level": 12, "ai": "aggressive" },
+      { "generalId": "zhangliao", "x": 11, "y": 7, "level": 12, "ai": "aggressive" }
+    ],
+    "events": [],
+    "reward": { "exp": 300, "gold": 700, "items": ["armor_dragon"] },
+    "nextBattleId": "ch3_01_redcliff"
+  },
+  {
+    "id": "ch3_01_redcliff",
+    "chapter": 3,
+    "title": "적벽대전",
+    "subtitle": "동남풍, 천명을 바꾸다",
+    "location": "형주 적벽",
+    "year": "208년 겨울",
+    "turnLimit": 28,
+    "objective": { "victory": "defeat-boss", "targetId": "caocao" },
+    "defeat": ["liubei-falls", "turn-limit"],
+    "map": {
+      "width": 18,
+      "height": 12,
+      "terrain": [
+        "..................",
+        "..MM........MM....",
+        ".MMMM......MMMM...",
+        ".MM..........MM...",
+        "....pppppppppp....",
+        "...wwwwwwwwwwww...",
+        "...wwwwwwwwwwww...",
+        "...wwwwwwwwwwww...",
+        "....pppppppppp....",
+        ".MM..........MM...",
+        ".MMMM......MMMM...",
+        "..MM........MM...."
+      ]
+    },
+    "playerDeploy": [
+      { "x": 1, "y": 4 }, { "x": 1, "y": 5 }, { "x": 1, "y": 6 }, { "x": 1, "y": 7 }, { "x": 1, "y": 8 }, { "x": 2, "y": 4 }, { "x": 2, "y": 8 }
+    ],
+    "playerForced": [
+      { "generalId": "liubei", "x": 1, "y": 6 },
+      { "generalId": "guanyu", "x": 1, "y": 4 },
+      { "generalId": "zhangfei", "x": 1, "y": 8 },
+      { "generalId": "zhaoyun", "x": 2, "y": 5 },
+      { "generalId": "zhugeliang", "x": 1, "y": 7 }
+    ],
+    "enemyUnits": [
+      { "generalId": "caocao", "x": 16, "y": 6, "level": 17, "ai": "lord" },
+      { "generalId": "xiahoudun", "x": 14, "y": 4, "level": 15, "ai": "aggressive" },
+      { "generalId": "xiahouyuan", "x": 14, "y": 8, "level": 15, "ai": "aggressive" },
+      { "generalId": "xuchu", "x": 15, "y": 5, "level": 15, "ai": "guard" },
+      { "generalId": "dianwei", "x": 15, "y": 7, "level": 15, "ai": "guard" },
+      { "generalId": "zhangliao", "x": 12, "y": 5, "level": 14, "ai": "aggressive" },
+      { "generalId": "xuhuang", "x": 12, "y": 7, "level": 14, "ai": "aggressive" },
+      { "generalId": "zhanghe", "x": 10, "y": 4, "level": 13, "ai": "aggressive" },
+      { "generalId": "simayi", "x": 16, "y": 5, "level": 16, "ai": "guard" }
+    ],
+    "events": [
+      { "id": "e_wind", "trigger": { "type": "turn-start", "turn": 4 }, "action": { "type": "dialogue", "id": "ch3_01_wind" } }
+    ],
+    "reward": { "exp": 400, "gold": 1500, "items": ["scroll_fire", "scroll_fire", "armor_bright"] },
+    "nextBattleId": "ch3_02_jingzhou"
+  },
+  {
+    "id": "ch3_02_jingzhou",
+    "chapter": 3,
+    "title": "형주 4군 평정",
+    "subtitle": "황충을 얻다",
+    "location": "형주 남방",
+    "year": "209년",
+    "turnLimit": 24,
+    "objective": { "victory": "defeat-all" },
+    "defeat": ["liubei-falls", "turn-limit"],
+    "map": {
+      "width": 16,
+      "height": 10,
+      "terrain": [
+        "................",
+        "..FFF.....FFF..G",
+        ".FFFFF...FFFFF.G",
+        "..FF.......FF.BB",
+        "....ppppppp...BB",
+        "....ppppppp...BB",
+        "....ppppppp...BB",
+        "..FF.......FF.BB",
+        ".FFFFF...FFFFF.G",
+        "..FFF.....FFF..."
+      ]
+    },
+    "playerDeploy": [
+      { "x": 1, "y": 4 }, { "x": 1, "y": 5 }, { "x": 2, "y": 4 }, { "x": 2, "y": 5 }, { "x": 2, "y": 6 }
+    ],
+    "playerForced": [
+      { "generalId": "liubei", "x": 1, "y": 5 },
+      { "generalId": "guanyu", "x": 2, "y": 4 },
+      { "generalId": "zhangfei", "x": 2, "y": 6 },
+      { "generalId": "zhaoyun", "x": 1, "y": 4 },
+      { "generalId": "zhugeliang", "x": 2, "y": 5 }
+    ],
+    "enemyUnits": [
+      { "generalId": "huangzhong", "x": 13, "y": 5, "level": 14, "ai": "lord", "items": ["bow_ancestor"] },
+      { "generalId": "weiyan", "x": 11, "y": 4, "level": 13, "ai": "aggressive" },
+      { "generalId": "han_warrior", "x": 11, "y": 6, "level": 12, "ai": "aggressive" },
+      { "generalId": "han_warrior", "x": 9, "y": 3, "level": 11, "ai": "aggressive" },
+      { "generalId": "han_warrior", "x": 9, "y": 7, "level": 11, "ai": "aggressive" }
+    ],
+    "events": [
+      { "id": "e_recruit_huang", "trigger": { "type": "hp-below", "generalId": "huangzhong", "percent": 0.25 }, "action": { "type": "recruit", "generalId": "huangzhong" } },
+      { "id": "e_recruit_wei", "trigger": { "type": "hp-below", "generalId": "weiyan", "percent": 0.3 }, "action": { "type": "recruit", "generalId": "weiyan" } }
+    ],
+    "reward": { "exp": 360, "gold": 900, "items": ["bow_ancestor"] },
+    "nextBattleId": "ch3_03_chengdu"
+  },
+  {
+    "id": "ch3_03_chengdu",
+    "chapter": 3,
+    "title": "성도 입성",
+    "subtitle": "익주를 얻다",
+    "location": "익주 성도",
+    "year": "214년",
+    "turnLimit": 26,
+    "objective": { "victory": "seize", "seizePos": { "x": 14, "y": 5 } },
+    "defeat": ["liubei-falls", "turn-limit"],
+    "map": {
+      "width": 16,
+      "height": 10,
+      "terrain": [
+        "................",
+        "..MMM......WWWW.",
+        ".MMMMM....WB..BW",
+        "...MM....WB..BGW",
+        "....ppppwwBBBBBW",
+        "....ppppwwBBBBGW",
+        "....ppppwwBBBBBW",
+        "...MM....WB..BW.",
+        ".MMMMM....WB.BW.",
+        "..MMM......WWWW."
+      ]
+    },
+    "playerDeploy": [
+      { "x": 1, "y": 4 }, { "x": 1, "y": 5 }, { "x": 1, "y": 6 }, { "x": 2, "y": 4 }, { "x": 2, "y": 5 }, { "x": 2, "y": 6 }
+    ],
+    "playerForced": [
+      { "generalId": "liubei", "x": 2, "y": 5 },
+      { "generalId": "zhangfei", "x": 1, "y": 6 },
+      { "generalId": "zhaoyun", "x": 1, "y": 4 },
+      { "generalId": "pangtong", "x": 2, "y": 4 },
+      { "generalId": "huangzhong", "x": 2, "y": 6 }
+    ],
+    "enemyUnits": [
+      { "generalId": "zhanghe", "x": 14, "y": 5, "level": 16, "ai": "lord" },
+      { "generalId": "xuhuang", "x": 12, "y": 4, "level": 15, "ai": "aggressive" },
+      { "generalId": "xuhuang", "x": 12, "y": 6, "level": 15, "ai": "aggressive" },
+      { "generalId": "machao", "x": 13, "y": 3, "level": 16, "ai": "aggressive" },
+      { "generalId": "machao", "x": 13, "y": 7, "level": 15, "ai": "aggressive" }
+    ],
+    "events": [
+      { "id": "e_recruit_ma", "trigger": { "type": "hp-below", "generalId": "machao", "percent": 0.2 }, "action": { "type": "recruit", "generalId": "machao" } }
+    ],
+    "reward": { "exp": 380, "gold": 1000, "items": ["horse_red_hare", "ring_phoenix"] },
+    "nextBattleId": "ch3_04_hanzhong"
+  },
+  {
+    "id": "ch3_04_hanzhong",
+    "chapter": 3,
+    "title": "정군산의 승리",
+    "subtitle": "하후연을 베다",
+    "location": "한중 정군산",
+    "year": "219년",
+    "turnLimit": 22,
+    "objective": { "victory": "defeat-boss", "targetId": "xiahouyuan" },
+    "defeat": ["liubei-falls", "turn-limit"],
+    "map": {
+      "width": 16,
+      "height": 12,
+      "terrain": [
+        "................",
+        "..MMMMMMMMMMMM..",
+        ".MMMMMMMMMMMMMM.",
+        ".MMM........MMM.",
+        "..M...pppp....M.",
+        "..M..pppppp...M.",
+        "..M..pppppp...M.",
+        "..M...pppp....M.",
+        ".MMM........MMM.",
+        ".MMMMMMMMMMMMMM.",
+        "..MMMMMMMMMMMM..",
+        "................"
+      ]
+    },
+    "playerDeploy": [
+      { "x": 1, "y": 5 }, { "x": 1, "y": 6 }, { "x": 2, "y": 5 }, { "x": 2, "y": 6 }, { "x": 3, "y": 5 }, { "x": 3, "y": 6 }
+    ],
+    "playerForced": [
+      { "generalId": "liubei", "x": 2, "y": 5 },
+      { "generalId": "zhangfei", "x": 1, "y": 6 },
+      { "generalId": "zhaoyun", "x": 1, "y": 5 },
+      { "generalId": "huangzhong", "x": 2, "y": 6 },
+      { "generalId": "machao", "x": 3, "y": 5 }
+    ],
+    "enemyUnits": [
+      { "generalId": "xiahouyuan", "x": 14, "y": 5, "level": 18, "ai": "lord" },
+      { "generalId": "zhanghe", "x": 12, "y": 4, "level": 17, "ai": "aggressive" },
+      { "generalId": "xuhuang", "x": 12, "y": 6, "level": 17, "ai": "aggressive" },
+      { "generalId": "zhangliao", "x": 13, "y": 3, "level": 16, "ai": "aggressive" },
+      { "generalId": "zhangliao", "x": 13, "y": 7, "level": 16, "ai": "aggressive" }
+    ],
+    "events": [
+      { "id": "e_falling_leaf", "trigger": { "type": "hp-below", "generalId": "xiahouyuan", "percent": 0.4 }, "action": { "type": "duel", "attacker": "huangzhong", "defender": "xiahouyuan" } }
+    ],
+    "reward": { "exp": 420, "gold": 1200, "items": ["armor_bright", "horse_red_hare"] },
+    "nextBattleId": "ch3_05_maicheng"
+  },
+  {
+    "id": "ch3_05_maicheng",
+    "chapter": 3,
+    "title": "맥성 구원 — 운명의 분기",
+    "subtitle": "관우를 구할 것인가, 형주를 버릴 것인가",
+    "location": "형주 맥성",
+    "year": "219년",
+    "turnLimit": 18,
+    "objective": { "victory": "escort", "targetId": "guanyu" },
+    "defeat": ["liubei-falls", "turn-limit"],
+    "map": {
+      "width": 18,
+      "height": 12,
+      "terrain": [
+        "..................",
+        "..WWWWWW..........",
+        "..W....W..pppppp..",
+        "..W....W..pppppp..",
+        "..W....G..pppppp..",
+        "..WWWWWW..pppppp..",
+        "..........pppppp..",
+        ".wwwwwwwww........",
+        "..........MMMM....",
+        "..MM.....MMMMMMM..",
+        ".MMMM.....MMMM....",
+        "..MM.............."
+      ]
+    },
+    "playerDeploy": [
+      { "x": 14, "y": 6 }, { "x": 14, "y": 7 }, { "x": 15, "y": 6 }, { "x": 15, "y": 7 }, { "x": 16, "y": 6 }
+    ],
+    "playerForced": [
+      { "generalId": "liubei", "x": 14, "y": 6 },
+      { "generalId": "zhangfei", "x": 15, "y": 6 },
+      { "generalId": "zhaoyun", "x": 16, "y": 6 },
+      { "generalId": "zhugeliang", "x": 14, "y": 7 },
+      { "generalId": "machao", "x": 15, "y": 7 }
+    ],
+    "enemyUnits": [
+      { "generalId": "guanyu", "x": 4, "y": 4, "level": 20, "ai": "passive" },
+      { "generalId": "guanping", "x": 4, "y": 5, "level": 15, "ai": "passive" },
+      { "generalId": "lvmeng", "x": 9, "y": 4, "level": 17, "ai": "aggressive" },
+      { "generalId": "lvmeng", "x": 9, "y": 6, "level": 17, "ai": "aggressive" },
+      { "generalId": "luxun", "x": 10, "y": 5, "level": 17, "ai": "lord" }
+    ],
+    "events": [
+      { "id": "e_branch", "trigger": { "type": "turn-start", "turn": 1 }, "action": { "type": "choice", "id": "ch3_05_branch" } }
+    ],
+    "reward": { "exp": 500, "gold": 1500 },
+    "nextBattleId": { "choice": "ch3_05_branch", "options": [
+      { "label": "관우를 구원한다", "next": "ch4_true_01_jieting" },
+      { "label": "복수를 택한다 (이릉)", "next": "ch4_bad_01_yiling" }
+    ] }
+  },
+  {
+    "id": "ch4_true_01_jieting",
+    "chapter": 4,
+    "title": "가정 전투 (진엔딩)",
+    "subtitle": "관우의 복귀, 강유의 등장",
+    "location": "한중 가정",
+    "year": "228년",
+    "turnLimit": 24,
+    "objective": { "victory": "defeat-all" },
+    "defeat": ["liubei-falls", "turn-limit"],
+    "map": {
+      "width": 16,
+      "height": 11,
+      "terrain": [
+        "................",
+        "..MMMM....MMMM..",
+        ".MMMMM....MMMMM.",
+        "..MM........MM..",
+        "......ppppp.....",
+        "......ppppp.....",
+        "......ppppp.....",
+        "..MM........MM..",
+        ".MMMMM....MMMMM.",
+        "..MMMM....MMMM..",
+        "................"
+      ]
+    },
+    "playerDeploy": [
+      { "x": 1, "y": 4 }, { "x": 1, "y": 5 }, { "x": 1, "y": 6 }, { "x": 2, "y": 4 }, { "x": 2, "y": 5 }, { "x": 2, "y": 6 }
+    ],
+    "playerForced": [
+      { "generalId": "liubei", "x": 2, "y": 5 },
+      { "generalId": "guanyu", "x": 1, "y": 4 },
+      { "generalId": "zhangfei", "x": 1, "y": 6 },
+      { "generalId": "zhaoyun", "x": 2, "y": 4 },
+      { "generalId": "zhugeliang", "x": 1, "y": 5 },
+      { "generalId": "machao", "x": 2, "y": 6 }
+    ],
+    "enemyUnits": [
+      { "generalId": "simayi", "x": 13, "y": 5, "level": 22, "ai": "lord" },
+      { "generalId": "zhangliao", "x": 11, "y": 4, "level": 20, "ai": "aggressive" },
+      { "generalId": "zhanghe", "x": 11, "y": 6, "level": 20, "ai": "aggressive" },
+      { "generalId": "xuhuang", "x": 10, "y": 3, "level": 19, "ai": "aggressive" },
+      { "generalId": "xuchu", "x": 12, "y": 5, "level": 20, "ai": "guard" }
+    ],
+    "events": [
+      { "id": "e_recruit_jiang", "trigger": { "type": "turn-start", "turn": 3 }, "action": { "type": "recruit", "generalId": "jiangwei" } }
+    ],
+    "reward": { "exp": 550, "gold": 2000 },
+    "nextBattleId": "ch4_true_02_wuzhang"
+  },
+  {
+    "id": "ch4_true_02_wuzhang",
+    "chapter": 4,
+    "title": "오장원 — 최후의 결전",
+    "subtitle": "별이 지지 않는 날",
+    "location": "한중 오장원",
+    "year": "234년",
+    "turnLimit": 30,
+    "objective": { "victory": "defeat-boss", "targetId": "simayi" },
+    "defeat": ["liubei-falls", "turn-limit"],
+    "map": {
+      "width": 18,
+      "height": 12,
+      "terrain": [
+        "..................",
+        "..MMMM......MMMM..",
+        ".MMMMMM....MMMMMM.",
+        "..MMM........MMM..",
+        ".....pppppppp.....",
+        ".....pppppppp.....",
+        ".....pppppppp.....",
+        ".....pppppppp.....",
+        "..MMM........MMM..",
+        ".MMMMMM....MMMMMM.",
+        "..MMMM......MMMM..",
+        ".................."
+      ]
+    },
+    "playerDeploy": [
+      { "x": 1, "y": 4 }, { "x": 1, "y": 5 }, { "x": 1, "y": 6 }, { "x": 1, "y": 7 }, { "x": 2, "y": 4 }, { "x": 2, "y": 5 }, { "x": 2, "y": 6 }, { "x": 2, "y": 7 }
+    ],
+    "playerForced": [
+      { "generalId": "liubei", "x": 2, "y": 5 },
+      { "generalId": "guanyu", "x": 1, "y": 4 },
+      { "generalId": "zhangfei", "x": 1, "y": 7 },
+      { "generalId": "zhaoyun", "x": 2, "y": 4 },
+      { "generalId": "zhugeliang", "x": 1, "y": 5 },
+      { "generalId": "huangzhong", "x": 2, "y": 6 },
+      { "generalId": "machao", "x": 1, "y": 6 },
+      { "generalId": "jiangwei", "x": 2, "y": 7 }
+    ],
+    "enemyUnits": [
+      { "generalId": "simayi", "x": 15, "y": 5, "level": 26, "ai": "lord" },
+      { "generalId": "zhangliao", "x": 13, "y": 4, "level": 24, "ai": "aggressive" },
+      { "generalId": "zhanghe", "x": 13, "y": 6, "level": 24, "ai": "aggressive" },
+      { "generalId": "xuhuang", "x": 12, "y": 5, "level": 23, "ai": "aggressive" },
+      { "generalId": "xuchu", "x": 14, "y": 5, "level": 24, "ai": "guard" },
+      { "generalId": "caocao", "x": 16, "y": 5, "level": 25, "ai": "guard" }
+    ],
+    "events": [],
+    "reward": { "exp": 700, "gold": 5000 },
+    "nextBattleId": "ch4_true_03_luoyang"
+  },
+  {
+    "id": "ch4_true_03_luoyang",
+    "chapter": 4,
+    "title": "낙양 입성 — 진엔딩",
+    "subtitle": "한실 재흥의 길",
+    "location": "낙양",
+    "year": "236년",
+    "turnLimit": 25,
+    "objective": { "victory": "seize", "seizePos": { "x": 15, "y": 5 } },
+    "defeat": ["liubei-falls", "turn-limit"],
+    "map": {
+      "width": 18,
+      "height": 11,
+      "terrain": [
+        "..................",
+        "..WWWWWWWWWWWWWW..",
+        "..W...........BW..",
+        "..W..pppppppp.BW..",
+        "..W..pppppppp.BW..",
+        "..G..pppppppp.GW..",
+        "..W..pppppppp.BW..",
+        "..W..pppppppp.BW..",
+        "..W...........BW..",
+        "..WWWWWWWWWWWWWW..",
+        ".................."
+      ]
+    },
+    "playerDeploy": [
+      { "x": 4, "y": 4 }, { "x": 4, "y": 5 }, { "x": 4, "y": 6 }, { "x": 5, "y": 4 }, { "x": 5, "y": 5 }, { "x": 5, "y": 6 }, { "x": 5, "y": 7 }, { "x": 6, "y": 5 }
+    ],
+    "playerForced": [
+      { "generalId": "liubei", "x": 5, "y": 5 },
+      { "generalId": "guanyu", "x": 4, "y": 4 },
+      { "generalId": "zhangfei", "x": 4, "y": 6 },
+      { "generalId": "zhaoyun", "x": 5, "y": 4 },
+      { "generalId": "zhugeliang", "x": 6, "y": 5 },
+      { "generalId": "huangzhong", "x": 5, "y": 7 },
+      { "generalId": "machao", "x": 5, "y": 6 },
+      { "generalId": "jiangwei", "x": 4, "y": 5 }
+    ],
+    "enemyUnits": [
+      { "generalId": "caocao", "x": 15, "y": 5, "level": 28, "ai": "lord" },
+      { "generalId": "xuchu", "x": 14, "y": 4, "level": 25, "ai": "guard" },
+      { "generalId": "dianwei", "x": 14, "y": 6, "level": 25, "ai": "guard" },
+      { "generalId": "zhangliao", "x": 13, "y": 3, "level": 24, "ai": "aggressive" },
+      { "generalId": "zhanghe", "x": 13, "y": 7, "level": 24, "ai": "aggressive" },
+      { "generalId": "xuhuang", "x": 12, "y": 5, "level": 24, "ai": "aggressive" }
+    ],
+    "events": [
+      { "id": "e_ending", "trigger": { "type": "battle-end", "victory": true }, "action": { "type": "dialogue", "id": "ending_true" } }
+    ],
+    "reward": { "exp": 1000, "gold": 10000 },
+    "nextBattleId": null
+  },
+  {
+    "id": "ch4_bad_01_yiling",
+    "chapter": 4,
+    "title": "이릉 대전",
+    "subtitle": "복수의 길 — 배드엔딩 루트",
+    "location": "형주 이릉",
+    "year": "222년",
+    "turnLimit": 20,
+    "objective": { "victory": "defeat-boss", "targetId": "luxun" },
+    "defeat": ["liubei-falls", "turn-limit"],
+    "map": {
+      "width": 18,
+      "height": 11,
+      "terrain": [
+        "..................",
+        "...FFFFFFFFFFFFF..",
+        "..FFFFFFFFFFFFFFF.",
+        "..FFF........FFFF.",
+        "..FF..pppppp..FF..",
+        "..FF..pppppp..FF..",
+        "..FF..pppppp..FF..",
+        "..FFF........FFFF.",
+        "..FFFFFFFFFFFFFFF.",
+        "...FFFFFFFFFFFFF..",
+        ".................."
+      ]
+    },
+    "playerDeploy": [
+      { "x": 1, "y": 4 }, { "x": 1, "y": 5 }, { "x": 1, "y": 6 }, { "x": 2, "y": 4 }, { "x": 2, "y": 5 }, { "x": 2, "y": 6 }
+    ],
+    "playerForced": [
+      { "generalId": "liubei", "x": 2, "y": 5 },
+      { "generalId": "zhangfei", "x": 1, "y": 6 },
+      { "generalId": "zhaoyun", "x": 1, "y": 4 },
+      { "generalId": "huangzhong", "x": 2, "y": 6 },
+      { "generalId": "machao", "x": 2, "y": 4 }
+    ],
+    "enemyUnits": [
+      { "generalId": "luxun", "x": 14, "y": 5, "level": 22, "ai": "lord" },
+      { "generalId": "lvmeng", "x": 12, "y": 4, "level": 20, "ai": "aggressive" },
+      { "generalId": "ganning", "x": 12, "y": 6, "level": 19, "ai": "aggressive" },
+      { "generalId": "taishici", "x": 13, "y": 3, "level": 19, "ai": "aggressive" },
+      { "generalId": "taishici", "x": 13, "y": 7, "level": 19, "ai": "aggressive" }
+    ],
+    "events": [
+      { "id": "e_fire_camp", "trigger": { "type": "turn-start", "turn": 6 }, "action": { "type": "dialogue", "id": "ch4_bad_fire" } },
+      { "id": "e_ending", "trigger": { "type": "battle-end", "victory": true }, "action": { "type": "dialogue", "id": "ending_bad" } }
+    ],
+    "reward": { "exp": 600, "gold": 2000 },
+    "nextBattleId": null
+  }
+]

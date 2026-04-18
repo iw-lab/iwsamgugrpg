@@ -1,0 +1,36 @@
+{
+  "ch4_bad_fire": {
+    "id": "ch4_bad_fire",
+    "lines": [
+      { "speaker": "luxun", "portrait": "portrait_luxun", "emotion": "serious", "text": "유비의 진영이 숲에 걸쳐 있다. 때가 왔다. 모두 불을 놓아라." },
+      { "speaker": "narrator", "text": "이릉 일대의 수백 리 진영이 한순간에 불바다가 되었다. 촉군의 진형이 붕괴하기 시작했다." },
+      { "speaker": "liubei", "portrait": "portrait_liubei", "emotion": "sad", "text": "육손... 어리게만 보이던 그자에게 이렇게 당하는구나..." }
+    ]
+  },
+  "ending_true": {
+    "id": "ending_true",
+    "title": "진엔딩 — 한조재흥",
+    "background": "bg_luoyang",
+    "lines": [
+      { "speaker": "narrator", "text": "마침내 낙양이 열렸다. 유비는 황제의 상에 엎드려 통곡했다." },
+      { "speaker": "liubei", "portrait": "portrait_liubei", "emotion": "happy", "text": "선조께 고하나이다. 한의 천하가 다시 바로 섰사옵니다." },
+      { "speaker": "guanyu", "portrait": "portrait_guanyu", "text": "형님... 해냈구려." },
+      { "speaker": "zhangfei", "portrait": "portrait_zhangfei", "emotion": "happy", "text": "와하하! 30년 고생의 보답이 여기 있소!" },
+      { "speaker": "zhugeliang", "portrait": "portrait_zhugeliang", "emotion": "serious", "text": "선주의 대업이 이루어졌습니다. 공명, 여한이 없습니다." },
+      { "speaker": "narrator", "text": "복숭아 꽃이 다시 피는 날, 탁군에서 시작한 세 사람의 맹세는 마침내 천하에 새겨졌다." },
+      { "speaker": "narrator", "text": "— 진엔딩 클리어 —" }
+    ]
+  },
+  "ending_bad": {
+    "id": "ending_bad",
+    "title": "배드엔딩 — 이릉의 비가",
+    "background": "bg_yiling_fire",
+    "lines": [
+      { "speaker": "narrator", "text": "유비는 백제성에 이르러 병을 얻었다. 제갈량을 급히 불러 뒷일을 맡겼다." },
+      { "speaker": "liubei", "portrait": "portrait_liubei", "emotion": "sad", "text": "공명... 후주를 잘 부탁하오. 그가 재목이 아니거든... 그대가 대신하라." },
+      { "speaker": "zhugeliang", "portrait": "portrait_zhugeliang", "emotion": "sad", "text": "어찌 그런 말씀을... 소신, 목숨이 다할 때까지 후주를 섬기오리다." },
+      { "speaker": "narrator", "text": "유비는 조용히 눈을 감았다. 도원결의의 세 형제 중 마지막 남은 자의 최후였다." },
+      { "speaker": "narrator", "text": "— 배드엔딩 — '관우를 구하고 형주를 지켰다면...' 분기로 재도전해 보자." }
+    ]
+  }
+}

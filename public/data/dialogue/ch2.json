@@ -1,0 +1,17 @@
+{
+  "ch2_02_fire": {
+    "id": "ch2_02_fire",
+    "lines": [
+      { "speaker": "zhugeliang", "portrait": "portrait_zhugeliang", "emotion": "serious", "text": "주공, 지금 바람이 동남쪽에서 붑니다. 화공을 걸 때가 왔습니다." },
+      { "speaker": "liubei", "portrait": "portrait_liubei", "text": "공명의 말대로 하시오." },
+      { "speaker": "zhugeliang", "portrait": "portrait_zhugeliang", "text": "조운, 숲에 기름을 부어라. 관 장군, 지휘를 맡아 주시오." }
+    ]
+  },
+  "ch2_04_roar": {
+    "id": "ch2_04_roar",
+    "lines": [
+      { "speaker": "zhangfei", "portrait": "portrait_zhangfei", "emotion": "angry", "text": "내가 장판교의 장익덕이다! 덤빌 자가 있거든 나오너라!" },
+      { "speaker": "narrator", "text": "장비의 포효에 조조의 장수 하후걸이 낙마하여 즉사했다. 백만 대군이 물러섰다." }
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "ch3_01_wind": {
+    "id": "ch3_01_wind",
+    "lines": [
+      { "speaker": "zhugeliang", "portrait": "portrait_zhugeliang", "emotion": "serious", "text": "제단을 세우고 이레 동안 칠성단에 빌었소. 이제 동남풍이 부오." },
+      { "speaker": "narrator", "text": "겨울철 이례적인 동남풍이 불어왔다. 조조의 연환선이 활활 타오르기 시작했다." },
+      { "speaker": "liubei", "portrait": "portrait_liubei", "emotion": "happy", "text": "공명, 그대야말로 신출귀몰한 사람이오." }
+    ]
+  },
+  "ch3_05_branch": {
+    "id": "ch3_05_branch",
+    "title": "운명의 분기",
+    "lines": [
+      { "speaker": "narrator", "text": "관우가 맥성에 고립되었다는 소식이 당도했다. 오군 여몽이 형주를 기습해 관우의 퇴로를 끊었다." },
+      { "speaker": "zhangfei", "portrait": "portrait_zhangfei", "emotion": "angry", "text": "형님! 당장 오나라로 쳐들어가야 하오! 둘째 형을 구해야 하오!" },
+      { "speaker": "zhugeliang", "portrait": "portrait_zhugeliang", "emotion": "serious", "text": "주공, 감정에 휩쓸리지 마십시오. 구원군을 보내면 위-오 양쪽과 전쟁을 해야 합니다." },
+      { "speaker": "liubei", "portrait": "portrait_liubei", "text": "... 의형제의 맹세. 어찌 모른 척 하겠는가. 그러나 공명의 말도 맞다. 선택해야 한다." }
+    ],
+    "choices": [
+      { "label": "관우를 구원한다 (진엔딩 루트)", "next": "ch4_true_01_jieting" },
+      { "label": "형주를 포기하고 복수를 준비한다 (배드엔딩 루트)", "next": "ch4_bad_01_yiling" }
+    ]
+  },
+  "ch3_05_save_decision": {
+    "id": "ch3_05_save_decision",
+    "lines": [
+      { "speaker": "liubei", "portrait": "portrait_liubei", "emotion": "serious", "text": "관우를 구한다. 공명, 전군에 명을 내리시오." },
+      { "speaker": "zhugeliang", "portrait": "portrait_zhugeliang", "text": "... 주공의 뜻을 받들겠습니다. 조운과 마초를 선봉으로, 전력으로 형주를 수복합니다." }
+    ]
+  },
+  "ch3_05_revenge_decision": {
+    "id": "ch3_05_revenge_decision",
+    "lines": [
+      { "speaker": "liubei", "portrait": "portrait_liubei", "emotion": "sad", "text": "지금 가면 늦을 것이다. 오를 친다. 손권의 목을 베어 둘째의 영전에 바치리라." },
+      { "speaker": "zhugeliang", "portrait": "portrait_zhugeliang", "emotion": "serious", "text": "... 주공, 그러시면 안 됩니다. 이 길은..." },
+      { "speaker": "liubei", "portrait": "portrait_liubei", "text": "공명, 이번만은 그대의 말을 따를 수 없다." }
+    ]
+  }
+}

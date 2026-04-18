@@ -1,0 +1,50 @@
+{
+  "prologue_peach_garden": {
+    "id": "prologue_peach_garden",
+    "title": "도원결의",
+    "background": "bg_peach_garden",
+    "bgm": "bgm_oath",
+    "lines": [
+      { "speaker": "narrator", "text": "후한 말, 천하는 크게 어지러웠다. 간신들이 정권을 쥐고, 황건적의 난이 일어나 백성은 도탄에 빠졌다." },
+      { "speaker": "narrator", "text": "유주 탁군. 한 경제의 먼 후손이나 지금은 짚신을 삼아 생계를 잇던 한 청년이 의병 격문을 보고 있었다." },
+      { "speaker": "liubei", "portrait": "portrait_liubei", "emotion": "serious", "text": "탄식을 금할 수가 없구나... 이 나라를 어찌할꼬." },
+      { "speaker": "zhangfei", "portrait": "portrait_zhangfei", "emotion": "angry", "text": "대장부가 어찌 나라를 위해 힘쓰지 않고 한숨만 짓는가!" },
+      { "speaker": "liubei", "portrait": "portrait_liubei", "emotion": "happy", "text": "그대는 누구시오?" },
+      { "speaker": "zhangfei", "portrait": "portrait_zhangfei", "text": "나는 장비. 자는 익덕. 탁군에서 돼지를 잡고 술을 팔아 살고 있소. 천하의 호걸을 찾아 의형제 삼고자 했소이다." },
+      { "speaker": "guanyu", "portrait": "portrait_guanyu", "emotion": "serious", "text": "두 분의 이야기, 멀리서 들었소. 나 역시 뜻을 같이하오." },
+      { "speaker": "liubei", "portrait": "portrait_liubei", "text": "그대의 이름은 무엇이오?" },
+      { "speaker": "guanyu", "portrait": "portrait_guanyu", "text": "관우, 자는 운장. 고향에서 권세가를 벤 죄로 5~6년을 유랑한 몸이오." },
+      { "speaker": "zhangfei", "portrait": "portrait_zhangfei", "emotion": "happy", "text": "우리 집 뒤뜰에 복숭아꽃이 만발했소. 내일 그곳에서 천지에 맹세하고 의형제를 맺읍시다!" },
+      { "speaker": "narrator", "text": "다음 날 복숭아 꽃이 만발한 뜰에서 세 사람은 검은 소, 흰 말을 잡아 제를 올렸다." },
+      { "speaker": "liubei", "portrait": "portrait_liubei", "emotion": "serious", "text": "우리 세 사람, 비록 같은 성을 가진 것은 아니지만, 의형제가 되기로 맹세하였노라." },
+      { "speaker": "guanyu", "portrait": "portrait_guanyu", "text": "마음을 한 데 모아 힘을 합쳐, 어려운 이를 구하고 위태로운 이를 도우리라." },
+      { "speaker": "zhangfei", "portrait": "portrait_zhangfei", "text": "위로는 나라에 보답하고, 아래로는 백성을 평안케 하리니!" },
+      { "speaker": "all", "text": "같은 해 같은 달 같은 날에 태어나기를 바라지 않으되, 다만 같은 해 같은 달 같은 날에 죽기를 원하노라!" },
+      { "speaker": "narrator", "text": "이렇게 세 의형제가 탄생했다. 큰형 유비, 둘째 관우, 막내 장비. 그들의 긴 여정이 지금 시작된다." }
+    ]
+  },
+  "ch1_01_start": {
+    "id": "ch1_01_start",
+    "lines": [
+      { "speaker": "guanyu", "portrait": "portrait_guanyu", "text": "형님, 저 앞이 황건적의 본거지입니다." },
+      { "speaker": "zhangfei", "portrait": "portrait_zhangfei", "emotion": "angry", "text": "장각 저놈을 내가 찢어버리겠소! 덤벼라!" },
+      { "speaker": "liubei", "portrait": "portrait_liubei", "emotion": "serious", "text": "익덕, 진정하거라. 우리는 소수요, 장수들은 신중해야 하오." }
+    ]
+  },
+  "ch1_01_end": {
+    "id": "ch1_01_end",
+    "lines": [
+      { "speaker": "liubei", "portrait": "portrait_liubei", "text": "황건적의 첫 성채를 쳤소. 기뻐할 일이나 전쟁은 이제 시작이오." },
+      { "speaker": "guanyu", "portrait": "portrait_guanyu", "text": "다음은 낙양일 것이오. 제후들이 동탁 토벌을 위해 모인다 하니..." }
+    ]
+  },
+  "ch1_03_trio": {
+    "id": "ch1_03_trio",
+    "lines": [
+      { "speaker": "zhangfei", "portrait": "portrait_zhangfei", "emotion": "angry", "text": "이 세 발 달린 가노(家奴)야! 익덕이 여기 있다!" },
+      { "speaker": "lubu", "portrait": "portrait_lubu", "text": "덩치 큰 돼지놈... 형제 셋이 달려들어도 당할 수 없을 것이다!" },
+      { "speaker": "guanyu", "portrait": "portrait_guanyu", "emotion": "serious", "text": "아우야 물러서라. 내가 합세하마." },
+      { "speaker": "liubei", "portrait": "portrait_liubei", "text": "내가 돕겠소! 삼형제, 호뢰의 이름을 여기 남기자!" }
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "한조재흥기",
+  "short_name": "漢祖再興記",
+  "description": "유비 중심 헌작풍 턴제 SRPG",
+  "start_url": "./",
+  "display": "standalone",
+  "orientation": "landscape",
+  "background_color": "#0d0704",
+  "theme_color": "#d4af37",
+  "icons": []
+}
