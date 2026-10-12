@@ -10,6 +10,9 @@ import type { GridCell } from '@/utils/pathfinding';
 import { canRetaliate, computeDamage } from '@/utils/damage';
 import { EXP } from '@/config/balance';
 import type { Battle, RuntimeUnit, UnitPlacement } from '@/types';
+import { createJuice } from '@/juice/juice.js';
+import type { JuiceChannel } from '@/juice/juice.js';
+import { JUICE, JUICE_SFX } from '@/juice/reactions';
 
 type Phase =
   | 'start'
@@ -47,6 +50,7 @@ export class BattleScene extends Phaser.Scene {
   private mapHeightPx = 0;
   private firedEvents: Set<string> = new Set();
   private seized = false;
+  private J!: ReturnType<typeof createJuice>;
 
   constructor() {
     super(SCENE_KEYS.BATTLE);
@@ -80,12 +84,26 @@ export class BattleScene extends Phaser.Scene {
 
     this.cursor = this.add.image(-100, -100, 'cursor_select').setOrigin(0).setDepth(5);
 
+    this.J = createJuice({
+      table: JUICE as Record<string, JuiceChannel[]>,
+      sfx: (name: string, { rate, vol }: { rate: number; vol: number }) => {
+        const key = JUICE_SFX[name];
+        if (key) this.sound.play(key, { rate, volume: vol ?? 1 });
+      },
+    });
+
     this.spawnPlayers(data.playerPlacements);
     this.spawnEnemies();
 
     this.scene.launch(SCENE_KEYS.BATTLE_UI, { battle: this.battle });
 
     this.bindInput();
+
+    this.events.once('shutdown', () => {
+      this.time.timeScale = 1;
+      this.tweens.timeScale = 1;
+      this.J?.destroy();
+    });
 
     this.time.delayedCall(350, () => {
       this.events.emit('battle:turn-announce', { side: 'player', turn: 1 });
@@ -474,6 +492,11 @@ export class BattleScene extends Phaser.Scene {
           this.cameras.main.shake(120, 0.004);
           this.tweens.add({ targets: defC, alpha: { from: 0.3, to: 1 }, duration: 180 });
           this.spawnDamagePopup(defC.x + this.offsetX, defC.y + this.offsetY - 10, `${damage}`, crit ? '#ffd866' : '#fca5a5', crit);
+          if (crit) {
+            this.J.fire('crit', { text: '치명타!', color: '#ffd866' });
+          } else {
+            this.J.fire('hit', { color: '#fca5a5' });
+          }
         } else {
           this.spawnDamagePopup(defC.x + this.offsetX, defC.y + this.offsetY - 10, 'MISS', '#8a7245', false);
         }
@@ -481,10 +504,11 @@ export class BattleScene extends Phaser.Scene {
         if (defender.hp === 0) {
           const wasLord = DataRegistry.get().getGeneral(defender.generalId).class === 'lord';
           const expGain = EXP.KILL_BASE + (wasLord ? 40 : 0) + defender.level * 4;
+          this.J.fire('kill', { title: `${DataRegistry.get().getGeneral(defender.generalId).name} 격파!`, color: '#ff6b57' });
           if (attacker.side === 'player') {
             const leveled = gainExp(attacker, expGain);
             if (leveled) {
-              this.spawnDamagePopup(atkC.x + this.offsetX, atkC.y + this.offsetY - 24, 'LEVEL UP', '#ffd866', true);
+              this.J.fire('levelup', { title: `${DataRegistry.get().getGeneral(attacker.generalId).name} 레벨 업!`, color: '#ffd866' });
             }
           }
           this.fadeAndRemoveUnit(defender);
@@ -806,6 +830,7 @@ export class BattleScene extends Phaser.Scene {
     const reward = this.battle.reward;
 
     if (victory) {
+      this.J.fire('victory', { title: message || '전투 승리!', color: '#ffd866' });
       state.addGold(reward.gold);
       for (const u of this.units.filter((u) => u.side === 'player' && u.hp > 0)) {
         const entry = state.getRoster(u.generalId);
@@ -835,6 +860,16 @@ export class BattleScene extends Phaser.Scene {
         message,
       });
     });
+  }
+
+  /** 반응(주스) 멈칫·느리게를 씬 시간에 건다 — Phaser 의 모든 타이머·트윈이 따라간다 */
+  update(_time: number, delta: number): void {
+    if (!this.J) return;
+    const dtSec = delta / 1000;
+    const scaled = this.J.time(dtSec);
+    const scale = dtSec > 0 ? Phaser.Math.Clamp(scaled / dtSec, 0, 1) : 1;
+    this.time.timeScale = scale;
+    this.tweens.timeScale = scale;
   }
 
   private showHelp() {

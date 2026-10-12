@@ -1,0 +1,52 @@
+[
+  {
+    "file": "crit.wav",
+    "recipe": "crit",
+    "seed": 9153,
+    "sha1": "1b3beeb66690090a1205eafb77db54217b8fc00c",
+    "sec": 0.2,
+    "bytes": 17684,
+    "license": "self-generated",
+    "source": "game-builder/tools/gen-sfx.py"
+  },
+  {
+    "file": "hit_soft.wav",
+    "recipe": "hit_soft",
+    "seed": 1234,
+    "sha1": "e301e9cc209bbf561df8b298b7d8c8659cd77360",
+    "sec": 0.1,
+    "bytes": 8864,
+    "license": "self-generated",
+    "source": "game-builder/tools/gen-sfx.py"
+  },
+  {
+    "file": "ko_punch.wav",
+    "recipe": "ko_punch",
+    "seed": 17072,
+    "sha1": "b66aeec2c2eca5a57b73e2cd070f36bd907e5848",
+    "sec": 0.45,
+    "bytes": 39734,
+    "license": "self-generated",
+    "source": "game-builder/tools/gen-sfx.py"
+  },
+  {
+    "file": "powerup.wav",
+    "recipe": "powerup",
+    "seed": 24991,
+    "sha1": "9cb53470a06bfce1eb3e5e05221aaa7db00c37e2",
+    "sec": 0.4,
+    "bytes": 35324,
+    "license": "self-generated",
+    "source": "game-builder/tools/gen-sfx.py"
+  },
+  {
+    "file": "win.wav",
+    "recipe": "win",
+    "seed": 32910,
+    "sha1": "cfc8e6185de2686c2e710510a6df78ce44b1e3d8",
+    "sec": 0.75,
+    "bytes": 66194,
+    "license": "self-generated",
+    "source": "game-builder/tools/gen-sfx.py"
+  }
+]

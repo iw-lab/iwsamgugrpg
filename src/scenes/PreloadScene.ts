@@ -8,6 +8,16 @@ export class PreloadScene extends Phaser.Scene {
     super(SCENE_KEYS.PRELOAD);
   }
 
+  preload() {
+    // 반응(주스) 효과음 — gen-sfx.py 레시피(hit_soft·crit·ko_punch·powerup·win)로 생성.
+    const base = import.meta.env.BASE_URL || './';
+    this.load.audio('sfx_hit', `${base}assets/audio/hit_soft.wav`);
+    this.load.audio('sfx_crit', `${base}assets/audio/crit.wav`);
+    this.load.audio('sfx_kill', `${base}assets/audio/ko_punch.wav`);
+    this.load.audio('sfx_levelup', `${base}assets/audio/powerup.wav`);
+    this.load.audio('sfx_victory', `${base}assets/audio/win.wav`);
+  }
+
   async create() {
     const bg = this.add.rectangle(0, 0, GAME_WIDTH, GAME_HEIGHT, COLORS.BG).setOrigin(0);
     bg.setStrokeStyle(1, COLORS.PANEL_BORDER, 0.3);
